@@ -1,13 +1,13 @@
 var getData = function ($timeout, $q) {
   return function() {
-    var defer = $q.defer()
+    var defer = $q.defer();
 
     // simulated async function
     $timeout(function() {
-      defer.resolve('data received!')
-    }, 2000)
+      defer.resolve('data received!');
+    }, 2000);
 
-    return defer.promise
+    return defer.promise;
   }
 }
 
@@ -16,6 +16,6 @@ angular.module('app', [])
 .run(function(getData) {
   var promise = getData()
     .then(function(string) {
-      console.log(string)
+      console.log(string);
     });
 })
